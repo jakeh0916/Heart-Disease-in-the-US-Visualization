@@ -1,0 +1,232 @@
+:root {
+    --trim-edge: #171616;
+    --trim-center: #302d2d;
+    --background: #f0edeb;
+    --text: #000;
+    --button-background: #f8f5f3;
+
+    --x: #a1dcf6;
+    --y: #ff4d4d;
+}
+
+html, body {
+    background: linear-gradient(
+        90deg, var(--trim-edge) 0%, 
+        var(--trim-center) 25%,
+        var(--trim-center) 75%,
+        var(--trim-edge) 100%);
+    margin: 0;
+    padding: 0;
+}
+
+#interface-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#visualization-container {
+    width: 1000px;
+    height: 750px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#map-overlay {
+    position: absolute;
+    z-index: 20;
+}
+
+#map-inspect {
+    position: absolute;
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    border: 2px solid white;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+#title {
+    font-family: Verdana, sans-serif;
+    font-size: 30px;
+    color: var(--text);
+
+    position: absolute;
+    top: calc(100vh * 0.5 - 365px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#subtitle {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: var(--text);
+
+    position: absolute;
+    top: calc(100vh * 0.5 - 330px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#key {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: var(--text);
+
+    position: absolute;
+    top: calc(100vh * 0.5 - 300px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+
+    font-family: Verdana, sans-serif;
+    background: #f8f5f3;
+    box-shadow: 2px 2px 2px 0px #5c5c5c80;
+    border: 2px solid #ddd;
+    padding: 8px;
+}
+
+#footer {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: var(--text);
+
+    position: absolute;
+    top: calc(100vh * 0.5 + 350px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#compare-with-label {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+
+    position: absolute;
+    top: calc(100vh * 0.5 + 260px);
+    left: calc(100vw * 0.5 - 450px);
+}
+
+#visualization-label {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+
+    position: absolute;
+    top: calc(100vh * 0.5 + 260px);
+    left: calc(100vw * 0.5 + 330px);
+}
+
+.data-button {
+    font-family: Verdana, sans-serif;
+    background: #f8f5f3;
+    box-shadow: 2px 2px 2px 0px #5c5c5c80;
+    border: 2px solid #ddd;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px;
+    z-index: 30;
+}
+
+.data-button:hover {
+    border-style: dotted;
+}
+
+#compare-with-smoking {
+    position: absolute;
+    top: calc(100vh * 0.5 + 300px);
+    left: calc(100vw * 0.5 - 450px);
+}
+
+#compare-with-hbp {
+    position: absolute;
+    top: calc(100vh * 0.5 + 300px);
+    left: calc(100vw * 0.5 - 400px);
+}
+
+#compare-with-inactive {
+    position: absolute;
+    top: calc(100vh * 0.5 + 300px);
+    left: calc(100vw * 0.5 - 350px);
+}
+
+#compare-with-poverty {
+    position: absolute;
+    top: calc(100vh * 0.5 + 300px);
+    left: calc(100vw * 0.5 - 300px);
+}
+
+#visualization-map {
+    position: absolute;
+    top: calc(100vh * 0.5 + 300px);
+    left: calc(100vw * 0.5 + 330px);
+}
+
+#visualization-chart {
+    position: absolute;
+    top: calc(100vh * 0.5 + 300px);
+    left: calc(100vw * 0.5 + 380px);
+}
+
+.chart-label {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.map-background {
+    fill: none;
+    pointer-events: all;
+}
+
+#state-borders {
+    fill: none;
+    stroke: var(--background);
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+#tooltip {
+    position: absolute;
+    display: none;
+    font-family: Verdana, sans-serif;
+    background: #f8f5f3;
+    box-shadow: 2px 2px 2px 0px #5c5c5c80;
+    border: 2px solid #ddd;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 8px;
+    min-width: 160px;
+    color: #333;
+    z-index: 1000;
+}
+
+.tooltip-title {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}

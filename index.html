@@ -1,0 +1,42 @@
+<!-- Created by Jake Huseman for CS5124001 at University of Cincinnati -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization: Project 1</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="interface-container">
+        <div id="visualization-container">
+        </div>
+    </div>
+
+    <div id="map-inspect"></div>
+
+    <h1 id="title">Heart Disease in the United States</h1>
+    <p id="subtitle">Created by Jake Huseman for CS5124001 at University of Cincinnati</p>
+    <p id="key">Displaying Percent Smoking vs. Percent Coronary Heart Disease.</p>
+    <p id="footer">(Sources and credits: National Health Dataset (CDC) and TopoJSON.)</p>
+    <div id="tooltip"></div>
+
+    <p id="compare-with-label">Compare With</p>
+    <input id="compare-with-smoking" class="data-button" type="image" src="icons/smoking.svg" width="24px" height="24px" onclick="compareWithSmoking()"/>
+    <input id="compare-with-hbp" class="data-button" type="image" src="icons/hbp.svg" width="24px" height="24px" onclick="compareWithHBP()"/>
+    <input id="compare-with-inactive" class="data-button" type="image" src="icons/inactive.svg" width="24px" height="24px" onclick="compareWithInactive()"/>
+    <input id="compare-with-poverty" class="data-button" type="image" src="icons/poverty.svg" width="24px" height="24px" onclick="compareWithPoverty()"/>
+
+    <p id="visualization-label">Visualization</p>
+    <input id="visualization-map" class="data-button" type="image" src="icons/map.svg" width="24px" height="24px" onclick="visualizeMap()"/>
+    <input id="visualization-chart" class="data-button" type="image" src="icons/chart.svg" width="24px" height="24px" onclick="visualizeChart()"/>
+
+    <script src="js/thirdparty/d3.v6.min.js"></script>
+
+    <script src="js/thirdparty/topojson.v3.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
